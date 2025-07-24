@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MediCare_Hub</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MediCare_Hub.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">MediCare Hub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex ms-lg-3">
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer mt-auto py-4 bg-light border-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+                <a href="#" class="text-decoration-none me-3">Terms</a>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-decoration-none me-3">Privacy
+                    Policy</a>
+                <a href="#contact" class="text-decoration-none">Contact Info</a>
+            </div>
+            <div>
+                <a href="#" class="text-muted me-3" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path
+                            d="M8.94 8.5H10.5V7h-1.56V6.09c0-.36.1-.61.62-.61H10.5V4.09C10.33 4.06 9.87 4 9.34 4c-1.28 0-2.16.78-2.16 2.21V7H5.5v1.5h1.68V14h2.01V8.5z" />
+                    </svg>
+                </a>
+                <a href="#" class="text-muted me-3" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path
+                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.009-.422A6.68 6.68 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.084.797A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115c-.212 0-.417-.021-.616-.061a3.293 3.293 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                    </svg>
+                </a>
+                <a href="#" class="text-muted" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 3c1.657 0 1.85.006 2.502.036.651.03 1.003.14 1.237.23.304.117.522.258.751.487.229.229.37.447.487.751.09.234.2.586.23 1.237C12.994 6.15 13 6.343 13 8c0 1.657-.006 1.85-.036 2.502-.03.651-.14 1.003-.23 1.237a1.785 1.785 0 0 1-.487.751 1.785 1.785 0 0 1-.751.487c-.234.09-.586.2-1.237.23C9.85 12.994 9.657 13 8 13c-1.657 0-1.85-.006-2.502-.036-.651-.03-1.003-.14-1.237-.23a1.785 1.785 0 0 1-.751-.487 1.785 1.785 0 0 1-.487-.751c-.09-.234-.2-.586-.23-1.237C3.006 9.85 3 9.657 3 8c0-1.657.006-1.85.036-2.502.03-.651.14-1.003.23-1.237a1.785 1.785 0 0 1 .487-.751 1.785 1.785 0 0 1 .751-.487c.234-.09.586-.2 1.237-.23C6.15 3.006 6.343 3 8 3zm0-1C6.326 2 6.102 2.007 5.352 2.037c-.75.03-1.265.14-1.71.29a3.785 3.785 0 0 0-1.357.89 3.785 3.785 0 0 0-.89 1.357c-.15.445-.26.96-.29 1.71C2.007 6.102 2 6.326 2 8c0 1.674.007 1.898.037 2.648.03.75.14 1.265.29 1.71.2.53.49.995.89 1.357.362.4.827.69 1.357.89.445.15.96.26 1.71.29.75.03.974.037 2.648.037s1.898-.007 2.648-.037c.75-.03 1.265-.14 1.71-.29a3.785 3.785 0 0 0 1.357-.89 3.785 3.785 0 0 0 .89-1.357c.15-.445.26-.96.29-1.71.03-.75.037-.974.037-2.648s-.007-1.898-.037-2.648c-.03-.75-.14-1.265-.29-1.71a3.785 3.785 0 0 0-.89-1.357 3.785 3.785 0 0 0-1.357-.89c-.445-.15-.96-.26-1.71-.29C9.898 2.007 9.674 2 8 2z" />
+                        <path d="M8 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 1a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
+                        <circle cx="12.5" cy="3.5" r="1" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="container text-center mt-2 text-muted small">
+            &copy; 2025 MediCare Hub. All rights reserved.
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
