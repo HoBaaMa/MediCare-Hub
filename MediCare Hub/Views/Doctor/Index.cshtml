@@ -4,38 +4,45 @@
     ViewData["Title"] = "Doctors Details";
 }
 
-<h2>Doctors Details</h2>
-<h4>Add A New Doctor: <a asp-action="Add" class="btn btn-info pt-2 pb-2">Add</a></h4>
-
-<hr />
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Salary</th>
-            <th scope="col">Qualification</th>
-            <th scope="col">Hospital ID</th>
-            <th scope="col">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr class="@(item.Id % 2 == 0 ? "table-primary" : "table-secondary")">
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>@item.Salary</td>
-                <td>@item.Qualification</td>
-                <td>@item.HospitalId</td
-                <td>
-                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-success">Update</a>
-                    <a asp-action="Delete"
-                       asp-route-id="@item.Id"
-                       class="btn btn-danger"
-                       onclick="return confirm('Are you sure to delete doctor: @item.Name?')">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container mt-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3">
+        <h2 class="mb-3 mb-md-0">Doctors Details</h2>
+        <a asp-action="Add" class="btn btn-primary btn-lg">+ Add Doctor</a>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Qualification</th>
+                            <th scope="col">Hospital ID</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Salary</td>
+                                <td>@item.Qualification</td>
+                                <td>@item.HospitalId</td>
+                                <td>
+                                    <a asp-action="Update" asp-route-id="@item.Id"
+                                        class="btn btn-outline-success btn-sm me-2">Update</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm"
+                                        onclick="return confirm('Are you sure to delete doctor: @item.Name?')">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

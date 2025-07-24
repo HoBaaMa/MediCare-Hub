@@ -8,7 +8,11 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
@@ -19,4 +23,178 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+/* Hero Section Styles (from Home/Index.cshtml) */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-headline {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-highlight {
+  color: #4F8CFF;
+}
+
+.hero-desc {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-btn {
+  background: #4F8CFF;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  transition: background 0.2s;
+}
+
+.hero-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.hero-img-col {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-img-main {
+  max-width: 380px;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  left: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-bg-shape {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 340px;
+  background: #4D77FF;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.15;
+}
+
+.doctor-card {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(79, 140, 255, 0.12);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+  min-width: 220px;
+  transform: translateY(50%);
+}
+
+.doctor-card-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4F8CFF;
+}
+
+.doctor-card-title {
+  font-weight: 700;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+.doctor-card-desc {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-card-btn {
+  background: #4F8CFF;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  padding: 0.4rem 1.1rem;
+  border: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.doctor-card-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .hero-bg-shape {
+    width: 220px;
+    height: 220px;
+    left: 60%;
+  }
+
+  .hero-img-main {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-img-col {
+    margin-top: 2rem;
+    justify-content: center;
+    position: relative;
+    min-height: 350px;
+  }
+
+  .hero-bg-shape {
+    width: 160px;
+    height: 160px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-img-main {
+    max-width: 120px;
+  }
+
+  .doctor-card {
+    position: static;
+    margin: 1.5rem auto 0 auto;
+    transform: none;
+    left: unset;
+    top: unset;
+    bottom: unset;
+  }
 }
