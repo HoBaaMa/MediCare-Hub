@@ -1,6 +1,11 @@
-html {
-  font-size: 14px;
+a {
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif !important;
 }
+
+/* html {
+  font-size: 14px;
+} */
 
 @media (min-width: 768px) {
   html {
@@ -196,5 +201,97 @@ body {
     left: unset;
     top: unset;
     bottom: unset;
+  }
+}
+
+.solutions-section {
+  background: #fff;
+}
+
+.solution-card {
+  border-top: 3px solid #4D77FF;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.07);
+  transition: box-shadow 0.2s;
+  background: #fff;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.solution-card:hover {
+  box-shadow: 0 12px 36px rgba(44, 62, 80, 0.13);
+}
+
+.solution-icon img {
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+}
+
+.solutions-section h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  color: #222;
+}
+
+.solutions-section .fw-semibold {
+  font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+  .solution-card {
+    min-height: 220px;
+    padding: 1.5rem 1rem;
+  }
+}
+
+.find-doctor-section {
+  background: #fff;
+}
+
+.find-doctor-section h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  color: #222;
+}
+
+.find-doctor-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 420px;
+  height: 420px;
+  background: #4D77FF;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 0 0;
+  border-bottom-right-radius: 0 0;
+  border-bottom-left-radius: 0 0;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.find-doctor-img {
+  position: relative;
+  z-index: 2;
+  max-width: 370px;
+  width: 100%;
+}
+
+.checkmark-icon svg {
+  display: block;
+}
+
+@media (max-width: 991.98px) {
+  .find-doctor-bg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .find-doctor-img {
+    max-width: 180px;
   }
 }

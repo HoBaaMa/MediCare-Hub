@@ -1,7 +1,6 @@
 ﻿using MediCare_Hub.Models;
 using MediCare_Hub.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
 
 namespace MediCare_Hub.Controllers
 {
@@ -44,7 +43,7 @@ namespace MediCare_Hub.Controllers
             return View(_doctorService.GetDoctorById(id));
         }
         
-        [HttpPost]
+        [HttpPut]
         public IActionResult Update(Doctor doctor)
         {
             Doctor existingDoctor = _doctorService.GetDoctorById(doctor.Id);
@@ -59,7 +58,7 @@ namespace MediCare_Hub.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             _doctorService.RemoveDoctor(id);

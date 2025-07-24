@@ -10,6 +10,7 @@ namespace MediCare_Hub.Models
         public int Id { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "Name cannot be longer than 100 characters.")]
+        [DisplayName("Doctor Name")]
         public string Name { get; set; }
         [DefaultValue(0.0)]
         public float Salary { get; set; }
